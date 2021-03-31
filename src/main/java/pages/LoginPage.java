@@ -1,5 +1,5 @@
 /**
- * 
+ *  Login Pages
  */
 package pages;
 
@@ -15,31 +15,41 @@ import utils.ElementUtils;
  * @author bambadia
  *
  */
-public class LoginPage extends ElementUtils {
+public class LoginPage extends MenuPage {
 
 	WebDriver driver;
 
 	// Locators
 
-	@FindBy(id = "email")
+	@FindBy(id = "username")
 	@CacheLookup
-	private WebElement email;
+	private WebElement username;
 
-	@FindBy(id = "passwd")
+	@FindBy(id = "password")
 	@CacheLookup
 	private WebElement password;
 
-	@FindBy(id = "SubmitLogin")
+	@FindBy(xpath = "//*[@id=\"fm1\"]/div[4]/input[4]")
 	@CacheLookup
 	private WebElement loginButton;
 
-	@FindBy(xpath = "//a[contains(text(),'Forgot your password?')]")
+	@FindBy(xpath = "//*[@id=\"fm1\"]/div[4]/input[5]")
 	@CacheLookup
-	private WebElement forgotPasswdLink;
+	private WebElement reset;
+
+	@FindBy(id="app-name")
+	@CacheLookup
+	private WebElement pageTitle;
+
+	@FindBy(xpath="//*[@id=\"msg\"]/h2")
+	@CacheLookup
+	private WebElement successMsg;
+
 
 	// Constructor
 
 	public LoginPage(WebDriver driver) {
+		super(driver);
 
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -48,20 +58,20 @@ public class LoginPage extends ElementUtils {
 
 	public boolean isForgotPasswordLinkExist() {
 
-		return forgotPasswdLink.isDisplayed();
+		return reset.isDisplayed();
 
 	}
 
 	public void enterUsername(String username) {
 
 		//email.sendKeys(username);
-		doSendKeys(email, username);
+		doSendKeys(this.username, username);
 	}
 
 	public void enterPasswd(String passwd) {
 
 		//password.sendKeys(passwd);
-		doSendKeys(password, passwd);
+		doSendKeys(this.password, passwd);
 
 	}
 
@@ -70,13 +80,21 @@ public class LoginPage extends ElementUtils {
 		//loginButton.click();
 		doClick(loginButton);
 	}
+
+	public String getPageTitle(){
+		return doGetText(pageTitle);
+	}
+
+	public String getSuccesLoginMsg(){
+		return doGetText(successMsg);
+	}
 	
-	public AccountPage doLogin(String username, String password) {
+	public HomePage doLogin(String username, String password) {
 		
 		enterUsername(username);
 		enterPasswd(password);
 		clickOnLoginButton();
 		
-		return new AccountPage(driver);
+		return new HomePage(driver) ;
 	}
 }

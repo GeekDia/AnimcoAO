@@ -23,8 +23,8 @@ public class TestUtils {
 
 	// SET WAIT IN SECONDS
 
-	final static private long LOAD_TIMEOUT = 10;
-	final static private int AJAX_ELEMENT_TIMEOUT = 10;
+	final static private long LOAD_TIMEOUT = 30;
+	final static private int AJAX_ELEMENT_TIMEOUT = 30;
 	final static private long POLLING_DURATION = 5;
 
 	public static long getPollingDuration() {
@@ -62,7 +62,7 @@ public class TestUtils {
 	 * @return
 	 * This method help to read properties 
 	 */
-	public static Properties loadProperties() throws Exception, IOException {
+	public static Properties loadProperties() throws Exception {
 		InputStream inputStream = null;
 		try {
 			inputStream = TestUtils.class.getClassLoader().getResourceAsStream(DriverFactory.getConfigPropertiesPath());
@@ -90,7 +90,7 @@ public class TestUtils {
 	 */
 
 	public HashMap<String, String> parseStringXML(InputStream file) throws Exception {
-		HashMap<String, String> stringMap = new HashMap<String, String>();
+		HashMap<String, String> stringMap = new HashMap<>();
 		// Get Document Builder
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = factory.newDocumentBuilder();

@@ -6,15 +6,14 @@ Fonctionnalité: Connexion dans AnimCo AO
   Afin d'utiliser les fonctionnalités de l'outil
 
   Contexte:
-    Etant donné que je suis sur le CAS Auchan Klif "https://casqualif.auchan.com/"
-    Alors le titre de la page est "AUCHAN Authentication Service"
+    Etant donné que j'ai saisi l'url  "https://animco-appel-offres.qualif.fr.auchan.com/home"
+    Alors je suis redirigé vers le CAS "Authentication Service"
 
   Plan du Scénario: Connexion avec des identifiants valides
-    Quand je renseigne mon identifiant "<username>"
-    Et que je renseigne mon Mot de passe "<password>"
-    Et que je clique sur le bouton Se Connecter
-    Alors je vois le titre de la page d'accueil "Animco Appel d'offres"
+    Quand je me connecte avec mon username "<username>" et mot de passe "<password>"
+    Alors la page "<titre>" s'affiche
+    Et mon XFR est présent dans le header
 
     Exemples:
-      |username  | password |
-      |XFR728400 | auchan   |
+      |username  | password | titre             |
+      |XFR7284002|auchan    |Bienvenue dans Animco Appel d'offres !|

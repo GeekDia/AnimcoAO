@@ -1,5 +1,6 @@
 /**
- * 
+ * Element Utils
+ * Used in every pages
  */
 package utils;
 
@@ -25,19 +26,20 @@ public class ElementUtils {
 	public void doClick(WebElement element) {
 
 		waitForVisibility(element);
-		log.info("Cliking on : " +element.getText());
+		log.info("Cliking : " +element.getText());
 		element.click();
 
 	}
 
 	/**
 	 * @param element
-	 * @param keys    This function send keys to web element input
+	 * @param keys
+	 * This function send keys to web element input
 	 */
 	public void doSendKeys(WebElement element, String keys) {
 
 		waitForVisibility(element);
-		log.info("Sending " + keys + " on " +element.getText());
+		log.info("Sending " + keys + " : " +element.getText());
 		element.sendKeys(keys);
 
 	}
@@ -49,7 +51,7 @@ public class ElementUtils {
 	public String doGetText(WebElement element) {
 
 		waitForVisibility(element);
-		log.info("Getting text on element " + element + " => Text is " +element.getText());
+		log.info("Getting text " + element + " => Text is " +element.getText());
 
 		return element.getText();
 

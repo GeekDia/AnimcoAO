@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">App e2e Testing</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">janv. 20, 2021 06:42:10 PM</span></a>
+<a href="#"><span class="badge badge-primary">mars 29, 2021 08:15:10 PM</span></a>
 </li>
 </ul>
 </div>
@@ -66,13 +66,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>janv. 20, 2021 06:42:10 PM</h3>
+<h3>mars 29, 2021 08:15:10 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>janv. 20, 2021 06:42:25 PM</h3>
+<h3>mars 29, 2021 08:15:51 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -143,7 +143,7 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>6</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>5</b> steps passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -162,7 +162,7 @@
 </div></div>
 <script>
 var timeline = {
-"Connexion dans AnimCo AO":13.963
+"Connexion dans AnimCo AO":40.011
 };
 </script>
 <div class="row">
@@ -217,7 +217,7 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 6,
+passGrandChild: 5,
 failGrandChild: 0,
 warningGrandChild: 0,
 skipGrandChild: 0,
@@ -255,7 +255,7 @@ eventsCount: 5,
           <div class="test-detail">
             <p class="name">Connexion dans AnimCo AO</p>
             <p class="text-sm">
-              <span>18:42:11 PM</span> / <span>00:00:13:963</span>
+              <span>20:15:11 PM</span> / <span>00:00:40:011</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -264,9 +264,9 @@ eventsCount: 5,
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">Connexion dans AnimCo AO</h5>
-<span class='badge badge-success'>01.20.2021 18:42:11</span>
-<span class='badge badge-danger'>01.20.2021 18:42:25</span>
-<span class='badge badge-default'>00:00:13:963</span>
+<span class='badge badge-success'>03.29.2021 20:15:11</span>
+<span class='badge badge-danger'>03.29.2021 20:15:51</span>
+<span class='badge badge-default'>00:00:40:011</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 </div>
 <div class="m-t-15"><span class="badge badge-pill badge-default">@regression</span></div>
@@ -284,33 +284,28 @@ Afin d'utiliser les fonctionnalités de l'outil</div>
     </div>
         <div class="collapse">
           <div class="card-body">
-              <div class="step pass-bg" title="appSteps.LoginSteps.je_suis_sur_le_cas_auchan_klif(java.lang.String)">
-                <span>Etant donné que je suis sur le CAS Auchan Klif "https://casqualif.auchan.com/"</span>
+              <div class="step pass-bg" title="appSteps.LoginSteps.j_ai_saisi_l_url(java.lang.String)">
+                <span>Etant donné que j'ai saisi l'url  "https://animco-appel-offres.qualif.fr.auchan.com/home"</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="appSteps.LoginSteps.le_titre_de_la_page_est(java.lang.String)">
-                <span>Alors le titre de la page est "AUCHAN Authentication Service"</span>
+              <div class="step pass-bg" title="appSteps.LoginSteps.je_suis_redirigé_vers_le_cas(java.lang.String)">
+                <span>Alors je suis redirigé vers le CAS "Authentication Service"</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="appSteps.LoginSteps.je_renseigne_mon_identifiant(java.lang.String)">
-                <span>Quand je renseigne mon identifiant "XFR728400"</span>
+              <div class="step pass-bg" title="appSteps.LoginSteps.je_me_connecte_avec_mon_username_et_mot_de_passe(java.lang.String,java.lang.String)">
+                <span>Quand je me connecte avec mon username "XFR7284002" et mot de passe "auchan"</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="appSteps.LoginSteps.je_renseigne_mon_mot_de_passe(java.lang.String)">
-                <span>Et que je renseigne mon Mot de passe "auchan"</span>
+              <div class="step pass-bg" title="appSteps.LoginSteps.la_page_s_affiche(java.lang.String)">
+                <span>Alors la page "Bienvenue dans Animco Appel d'offres !" s'affiche</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="appSteps.LoginSteps.je_clique_sur_le_bouton_se_connecter()">
-                <span>Et que je clique sur le bouton Se Connecter</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="appSteps.LoginSteps.je_vois_le_titre_de_la_page_d_accueil(java.lang.String)">
-                <span>Alors je vois le titre de la page d'accueil "Animco Appel d'offres"</span>
+              <div class="step pass-bg" title="appSteps.LoginSteps.mon_xfr_est_présent_dans_le_header()">
+                <span>Et mon XFR est présent dans le header</span>
       <div>
       </div>
               </div>
@@ -361,14 +356,14 @@ Afin d'utiliser les fonctionnalités de l'outil</div>
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>18:42:11 PM</td>
+<td>20:15:11 PM</td>
 <td>
 <a href="#" class="linked" test-id='1' id='1'>Connexion dans AnimCo AO</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>18:42:11 PM</td>
+<td>20:15:11 PM</td>
 <td>
 <a href="#" class="linked" test-id='1' id='2'>Connexion avec des identifiants valides</a>
 <div class="">

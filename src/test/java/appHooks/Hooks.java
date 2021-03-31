@@ -1,5 +1,5 @@
 /**
- *
+ * App HOOKS
  */
 package appHooks;
 
@@ -41,6 +41,7 @@ public class Hooks {
 
     /**
      * @param scenario
+     * This function take a screenshot when error is encountered
      */
     @After(order = 1)
     public void takescreenshot(Scenario scenario) {
@@ -58,10 +59,14 @@ public class Hooks {
 
 
     @After(order = 0)
-    public void tearDown() throws UnknownHostException {
+    public void tearDown() {
 
+        try {
+            base.quit();
 
-        base.quit();
+        } catch (Exception e) {
+            throw e;
+        }
 
     }
 

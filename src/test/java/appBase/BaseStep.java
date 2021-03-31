@@ -1,5 +1,6 @@
 /**
- * 
+ * Base Page
+ * Set driver and browser
  */
 package appBase;
 
@@ -35,7 +36,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseStep {
 
 	private WebDriver driver;
-	protected static HashMap<String, String> strings = new HashMap<String, String>();
+	protected static HashMap<String, String> strings = new HashMap<>();
 	private Boolean grid = false;
 
 	ElementUtils utils = new ElementUtils();
@@ -70,7 +71,7 @@ public class BaseStep {
 		// Set execution type Grid or Local
 		DriverFactory.setRemote(getGrid());
 
-		if (DriverFactory.isRemote() == true) {
+		if (DriverFactory.isRemote()) {
 
 			utils.log.info("Executing tests on Grid !!!");
 
@@ -110,9 +111,13 @@ public class BaseStep {
 
 			if (browser.equalsIgnoreCase(Browsers.CHROME.name())) {
 
-				WebDriverManager.chromedriver().setup();
-				// disable push notifications
-				Map<String, Object> preferences = new HashMap<String, Object>();
+				//WebDriverManager.chromedriver().setup();
+				String chromeExecPath = System.getProperty("user.dir") + File.separator + "src/test/resources" + File.separator + "config" + File.separator + "chromedriver.exe";
+				System.out.println(chromeExecPath);
+				System.setProperty("webdriver.chrome.driver", chromeExecPath);
+
+				// disable push no"webdriver.chrome.driver"tifications
+				Map<String, Object> preferences = new HashMap<>();
 				preferences.put("profile.default_content_setting_values.notifications", 2);
 				preferences.put("credentials_enable_service", false);
 				preferences.put("profile.password_manager_enabled", false);
@@ -122,6 +127,7 @@ public class BaseStep {
 				options.addArguments("--disable-extensions");
 				options.addArguments("--disable-infobars");
 				options.addArguments("--incognito");
+				options.addArguments("ignore-certificate-errors");
 
 				driver = new ChromeDriver(options);
 				utils.log.info("Create driver instance as chrome driver !!!");
